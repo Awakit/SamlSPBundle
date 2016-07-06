@@ -11,6 +11,9 @@
         "awakit/lightsaml": "~1.1",
         "symfony/symfony": ">=2.3 <2.8"
     },
+    "repositories": [
+        { "type": "vcs", "url": "git@github.com:Awakit/lightsaml.git" }
+    ],
     "suggest": {
         "doctrine/orm": "If you want store sso state in relational database",
         "doctrine/mongodb-odm": "If you want store sso state to mongodb"
