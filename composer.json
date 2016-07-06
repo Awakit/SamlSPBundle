@@ -1,5 +1,5 @@
 {
-    "name": "aerialship/saml-sp-bundle",
+    "name": "awakit/saml-sp-bundle",
     "license": "MIT",
     "type": "symfony-bundle",
     "description": "Symfony2 SAML2 authentication bundle",
@@ -8,7 +8,7 @@
     },
     "require": {
         "php": ">=5.4.1",
-        "aerialship/lightsaml": "~1.0",
+        "awakit/lightsaml": "~1.1",
         "symfony/symfony": ">=2.3 <2.8"
     },
     "suggest": {
