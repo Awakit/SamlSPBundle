@@ -7,7 +7,7 @@
         "psr-0": { "AerialShip\\SamlSPBundle\\": "src/" }
     },
     "require": {
-        "php": ">=5.3.10",
+        "php": ">=5.4.1",
         "awakit/lightsaml": "~1.1",
         "symfony/symfony": ">=2.3 <2.8"
     },
