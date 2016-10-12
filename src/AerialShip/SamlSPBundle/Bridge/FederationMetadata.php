@@ -3,6 +3,7 @@
 namespace AerialShip\SamlSPBundle\Bridge;
 
 use AerialShip\LightSaml\Meta\SerializationContext;
+use AerialShip\LightSaml\Model\Metadata\NameIDFormat;
 use AerialShip\SamlSPBundle\Config\ServiceInfoCollection;
 use AerialShip\SamlSPBundle\RelyingParty\RelyingPartyInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -54,7 +55,7 @@ class FederationMetadata implements RelyingPartyInterface
         }
 
         $serviceInfo->getSpProvider()->setRequest($request);
-        $ed = $serviceInfo->getSpProvider()->getEntityDescriptor();
+        $ed = $serviceInfo->getSpProvider()->getEntityDescriptor()->addItem(new NameIDFormat($serviceInfo->getSpMetaProvider()->getSpMeta()->getNameIdFormat()));
 
         $context = new SerializationContext();
         $ed->getXml($context->getDocument(), $context);
