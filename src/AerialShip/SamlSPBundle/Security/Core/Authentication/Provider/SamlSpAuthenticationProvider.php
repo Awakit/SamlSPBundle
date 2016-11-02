@@ -147,12 +147,13 @@ class SamlSpAuthenticationProvider implements AuthenticationProviderInterface
         try {
             $user = $this->userProvider->loadUserBySamlInfo($token->getSamlSpInfo());
         } catch (UsernameNotFoundException $ex) {
-            if (false == $this->createIfNotExists) {
+            /*
+             * if (false == $this->createIfNotExists) {
                 throw $ex;
             }
+            */
             $user = $this->userProvider->createUserFromSamlInfo($token->getSamlSpInfo());
         }
-
         if (false == $user instanceof UserInterface) {
             throw new \RuntimeException('User provider did not return an implementation of user interface.');
         }

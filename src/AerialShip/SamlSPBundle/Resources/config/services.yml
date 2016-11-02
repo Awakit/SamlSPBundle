@@ -208,7 +208,7 @@ services:
 
     aerial_ship_saml_sp.user_provider_adapter:
         class: %aerial_ship_saml_sp.user_provider_adapter.class%
-        arguments: [~]
+        arguments: [~, '@chanel.user.manager', '@chanel.role.manager']
         public: false
         abstract: true
 
